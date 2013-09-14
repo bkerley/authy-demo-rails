@@ -1,2 +1,30 @@
-%h1 Users#new
-%p Find me in app/views/users/new.html.haml
+%h1 Sign Up
+= form_for @user, url: user_path do |f|
+  .row
+    .small-4.columns
+      = f.label :name, 'Username'
+      = f.text_field :name
+  .row
+    .small-4.columns
+      = f.label :password
+      = f.text_field :password
+    .small-4.columns
+      = f.label :password_confirmation, 'Password again'
+      = f.text_field :password_confirmation
+    .small-4.columns
+      Please enter and confirm a strong password.
+  .row
+    .small-4.columns
+      %label Country
+      %select#authy-countries{name: 'countrycode'}
+    .small-4.columns
+      %label{for: 'authy-cellphone'} Phone Number
+      %input#authy-cellphone{name: 'cellphone', type: 'text'}
+    .small-4.columns
+      Please enter a phone number where you can receive text messages.
+      This is used for two-factor authentication.
+  .row
+    .small-4.columns
+      = f.submit class: 'button success round'
+
+%script(src="//cdnjs.cloudflare.com/ajax/libs/authy-forms.js/2.0/form.authy.min.js" type="text/javascript")
