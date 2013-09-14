@@ -29,7 +29,7 @@ GEM
     atomic (1.1.14)
     authy (2.2.0)
       httpclient (>= 2.2.6)
-    bcrypt-ruby (3.1.2)
+    bcrypt-ruby (3.0.1)
     builder (3.1.4)
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -182,7 +182,7 @@ PLATFORMS
 
 DEPENDENCIES
   authy
-  bcrypt-ruby (~> 3.1.2)
+  bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 4.0.0)
   compass-rails
   cucumber-rails
