@@ -1,0 +1,18 @@
+%h1 Log In
+= form_tag session_path do
+  .row
+    .small-4.columns
+      %label{for: 'name'} Email address
+      %input#name{type: 'text', name: 'name'}
+    .small-4.pull-4.columns
+      %label{for: 'password'} Password
+      %input#password{type: 'password', name: 'password'}
+  .row
+    .small-4.columns
+      %label{for: 'authy-token'} Authy two-factor token
+      %input#authy-token{type: 'text', name: 'authy-token'}
+    .small-4.pull-4.columns
+      Get this token from the Authy app on your phone.
+  .row
+    .small-4.columns
+      = submit_tag 'Log In', class: 'button success'
