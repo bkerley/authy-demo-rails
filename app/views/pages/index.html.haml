@@ -1,0 +1,16 @@
+%h1 
+  authy demo 
+  %em for
+  ruby on rails
+%h2 user:
+%pre&= User.find(session[:user_id]).attributes.map{|k,v| "#{k}: #{v}"}.join("\n") rescue "nope, not logged in i guess"
+- if session[:user_id]
+  %p
+    = button_to 'Log Out', session_path, method: :delete, class: 'button alert'
+- else
+  %p
+    = link_to 'Log In', new_session_path, class: 'button'
+
+%h2 session:
+%pre&= session.keys.map{|k| "#{k}: #{session[k]}"}.join "\n"
+

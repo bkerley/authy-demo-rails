@@ -1,4 +1,5 @@
 AuthyDemoRails::Application.routes.draw do
+  root to: 'high_voltage/pages#show', id: 'index'
   resource :user, only: %i{new create}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
